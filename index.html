@@ -1,315 +1,145 @@
 <!doctype html>
-<html lang="fa">
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#100d2b">
-  <meta name="description" content="A live Grand Theft Auto VI release countdown. See the days, hours, minutes and seconds until November 19, 2026.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#08090c">
+  <meta name="description" content="Explore the world of Grand Theft Auto VI through official Rockstar Games location screenshots.">
+  <meta name="author" content="GTA VI Release Day">
+  <meta name="application-name" content="GTA VI Release Day">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://www.rockstargames.com; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://1999mehrsamsoroush1999.github.io/gta-vi-countdown/">
-  <meta property="og:title" content="GTA VI — The Countdown Is On">
-  <meta property="og:description" content="A live countdown to November 19, 2026. Open the page to watch every second tick down.">
-  <meta property="og:image" content="https://1999mehrsamsoroush1999.github.io/gta-vi-countdown/preview.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+  <meta property="og:title" content="GTA VI — Release Day">
+  <meta property="og:description" content="A visual journey through Leonida.">
+  <meta property="og:image" content="https://www.rockstargames.com/VI/_next/static/media/Leonida_Keys_01.0zgz7tveur6y8.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="GTA VI — The Countdown Is On">
-  <meta name="twitter:description" content="A live countdown to November 19, 2026. Open the page to watch every second tick down.">
-  <meta name="twitter:image" content="https://1999mehrsamsoroush1999.github.io/gta-vi-countdown/preview.png">
-  <title>GTA VI — Live Release Countdown</title>
-  <style>
-    :root {
-      color-scheme: dark;
-      --ink: #fff8f6;
-      --muted: #c4b9d7;
-      --pink: #ff4fbc;
-      --cyan: #56edff;
-      --orange: #ff9b68;
-      --night: #100d2b;
-      --glass: rgba(17, 12, 43, .68);
-    }
-    * { box-sizing: border-box; }
-    html { min-height: 100%; background: var(--night); overflow-x: clip; scroll-behavior: smooth; }
-    body {
-      position: relative;
-      min-height: 100vh;
-      min-height: 100svh;
-      width: 100%;
-      margin: 0;
-      color: var(--ink);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(ellipse at 50% 43%, rgba(255, 79, 188, .22), transparent 42%),
-        linear-gradient(180deg, #17113d 0%, #27134b 38%, #60245c 67%, #172447 100%);
-      overflow-x: clip;
-      overscroll-behavior-x: none;
-    }
-    body::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      opacity: .14;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.34'/%3E%3C/svg%3E");
-      mix-blend-mode: screen;
-      z-index: 5;
-    }
-    .scene {
-      min-height: 100vh;
-      min-height: 100svh;
-      width: 100%;
-      position: relative;
-      isolation: isolate;
-      display: flex;
-      flex-direction: column;
-      overflow-x: clip;
-    }
-    .sunset {
-      position: absolute; z-index: -3; width: min(58vw, 680px); aspect-ratio: 1;
-      left: 50%; top: 19%; transform: translateX(-50%); border-radius: 50%;
-      background: linear-gradient(180deg, #ffd18b 0%, #ff8d96 48%, #f34fae 100%);
-      box-shadow: 0 0 85px rgba(255, 109, 185, .3), 0 0 180px rgba(255, 109, 185, .12);
-      opacity: .9;
-    }
-    .sunset::after {
-      content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 48%;
-      background: repeating-linear-gradient(to bottom, transparent 0 13px, rgba(35, 18, 65, .7) 14px 18px);
-      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 35%);
-      mask-image: linear-gradient(to bottom, transparent 0%, #000 35%);
-    }
-    .horizon {
-      position: absolute; z-index: -2; bottom: 0; left: 0; right: 0; height: 37vh; min-height: 220px;
-      background: linear-gradient(180deg, transparent, rgba(11, 14, 43, .42) 35%, #0b1027 100%);
-    }
-    .horizon::before {
-      content: ""; position: absolute; inset: 20% 0 0;
-      background:
-        linear-gradient(to top, #090e24 0 64%, transparent 65%) 2% 100% / 7% 80% no-repeat,
-        linear-gradient(to top, #0b102a 0 80%, transparent 81%) 10% 100% / 9% 94% no-repeat,
-        linear-gradient(to top, #0b1025 0 56%, transparent 57%) 20% 100% / 7% 75% no-repeat,
-        linear-gradient(to top, #101432 0 89%, transparent 90%) 29% 100% / 10% 100% no-repeat,
-        linear-gradient(to top, #0a1028 0 68%, transparent 69%) 41% 100% / 8% 84% no-repeat,
-        linear-gradient(to top, #0b1027 0 76%, transparent 77%) 53% 100% / 10% 94% no-repeat,
-        linear-gradient(to top, #101431 0 58%, transparent 59%) 65% 100% / 9% 74% no-repeat,
-        linear-gradient(to top, #0b1028 0 86%, transparent 87%) 77% 100% / 9% 98% no-repeat,
-        linear-gradient(to top, #090e24 0 62%, transparent 63%) 88% 100% / 7% 80% no-repeat,
-        linear-gradient(to top, #090e24 0 75%, transparent 76%) 98% 100% / 8% 92% no-repeat;
-      opacity: .92;
-    }
-    .grid-floor {
-      position: absolute; z-index: -1; left: -20%; right: -20%; bottom: 0; height: 34vh;
-      transform: perspective(220px) rotateX(56deg);
-      transform-origin: top center;
-      background-image: linear-gradient(rgba(86, 237, 255, .34) 1px, transparent 1px), linear-gradient(90deg, rgba(86, 237, 255, .34) 1px, transparent 1px);
-      background-size: 54px 36px;
-      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,.8), transparent 86%);
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,.8), transparent 86%);
-    }
-    .topbar, main, footer { width: min(1120px, calc(100% - 44px)); margin-inline: auto; }
-    .topbar { display: flex; align-items: center; justify-content: space-between; padding: 28px 0; gap: 14px; }
-    .brand { display: flex; align-items: center; gap: 12px; letter-spacing: .18em; font-size: 11px; font-weight: 800; color: rgba(255,255,255,.88); }
-    .brand-mark { width: 34px; height: 34px; border: 1px solid rgba(86,237,255,.7); display: grid; place-items: center; color: var(--cyan); transform: rotate(45deg); box-shadow: 0 0 18px rgba(86,237,255,.15); }
-    .brand-mark span { transform: rotate(-45deg); font-size: 13px; }
-    .live { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid rgba(255,255,255,.22); background: rgba(15, 12, 43, .35); border-radius: 99px; color: #fff; font-size: 10px; letter-spacing: .16em; font-weight: 800; }
-    .live-dot { width: 7px; height: 7px; border-radius: 50%; background: #ff5c9c; box-shadow: 0 0 12px #ff5c9c; animation: pulse 1.5s infinite; }
-    main { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 30px 0 82px; position: relative; z-index: 2; }
-    .eyebrow { color: var(--cyan); letter-spacing: .36em; text-transform: uppercase; font-size: 10px; font-weight: 900; margin-bottom: 20px; text-shadow: 0 0 16px rgba(86,237,255,.4); }
-    h1 { font-size: clamp(42px, 8vw, 100px); line-height: .9; letter-spacing: -.075em; margin: 0; font-weight: 1000; text-transform: uppercase; text-shadow: 0 4px 0 rgba(27,14,54,.55), 0 0 36px rgba(255,79,188,.3); }
-    h1 .line2 { display: block; color: #ffd9ec; -webkit-text-stroke: 1px rgba(255,255,255,.22); }
-    h1 .vi { color: var(--cyan); text-shadow: 0 0 24px rgba(86,237,255,.48); }
-    .subtitle { color: rgba(255,248,246,.82); font-size: clamp(13px, 2vw, 17px); letter-spacing: .04em; margin: 22px 0 30px; }
-    .countdown-wrap { width: min(790px, 100%); padding: clamp(18px, 3vw, 30px); border: 1px solid rgba(255,255,255,.24); background: linear-gradient(135deg, rgba(21,14,51,.76), rgba(19,19,54,.52)); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: 0 24px 80px rgba(6,5,25,.35), inset 0 1px 0 rgba(255,255,255,.12); position: relative; }
-    .countdown-wrap::before, .countdown-wrap::after { content: ""; position: absolute; width: 26px; height: 26px; border-color: var(--pink); border-style: solid; }
-    .countdown-wrap::before { left: -1px; top: -1px; border-width: 2px 0 0 2px; }
-    .countdown-wrap::after { right: -1px; bottom: -1px; border-width: 0 2px 2px 0; }
-    .countdown-label { color: #ffd0e9; letter-spacing: .29em; text-transform: uppercase; font-size: 10px; font-weight: 900; margin-bottom: 20px; }
-    .timer { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(8px, 2vw, 18px); }
-    .unit { min-width: 0; padding: 14px 6px 12px; background: rgba(255,255,255,.055); border: 1px solid rgba(255,255,255,.095); position: relative; overflow: hidden; }
-    .unit::after { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--pink), var(--cyan), transparent); opacity: .85; }
-    .number { font-variant-numeric: tabular-nums; font-size: clamp(34px, 7vw, 68px); font-weight: 900; letter-spacing: -.055em; line-height: 1; color: white; text-shadow: 0 0 20px rgba(255,255,255,.18); }
-    .unit-name { display: block; margin-top: 10px; color: var(--muted); letter-spacing: .2em; font-size: 9px; font-weight: 800; }
-    .launch-info { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 12px 26px; margin-top: 22px; color: rgba(255,255,255,.8); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; }
-    .launch-info strong { color: white; }
-    .launch-info .divider { width: 4px; height: 4px; border-radius: 50%; background: var(--pink); box-shadow: 0 0 9px var(--pink); }
-    .local-clock { display: flex; align-items: center; justify-content: center; gap: 9px; flex-wrap: wrap; margin-top: 25px; color: rgba(238,229,255,.75); font-size: 11px; letter-spacing: .09em; }
-    .local-clock strong { color: var(--cyan); font-variant-numeric: tabular-nums; }
-    .timezone { color: rgba(255,255,255,.5); font-size: 10px; }
-    .out-now {
-      display: none;
-      max-width: 100%;
-      margin-inline: auto;
-      padding: 25px 12px;
-      color: var(--cyan);
-      font-size: clamp(22px, 5vw, 48px);
-      font-weight: 950;
-      line-height: 1.55;
-      letter-spacing: 0;
-      direction: rtl;
-      text-align: center;
-      overflow-wrap: anywhere;
-      text-shadow: 0 0 26px rgba(86,237,255,.4);
-    }
-    .scene.is-out .timer, .scene.is-out .countdown-label { display: none; }
-    .scene.is-out .out-now { display: block; }
-    footer { padding: 0 0 22px; display: flex; justify-content: space-between; gap: 14px; align-items: center; color: rgba(235,226,255,.52); font-size: 9px; letter-spacing: .12em; text-transform: uppercase; position: relative; z-index: 2; }
-    footer a { color: rgba(86,237,255,.78); text-decoration: none; }
-    footer a:hover { color: white; }
-    @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .45; transform: scale(.78); } }
-    @media (max-width: 560px) {
-      .topbar, main, footer { width: min(100% - 28px, 1120px); }
-      .topbar { padding: 19px 0; }
-      .brand { font-size: 9px; letter-spacing: .12em; }
-      .brand-mark { width: 29px; height: 29px; }
-      .live { font-size: 8px; padding: 7px 9px; }
-      main { padding: 40px 0 66px; }
-      .eyebrow { letter-spacing: .22em; font-size: 9px; }
-      .subtitle { max-width: 300px; line-height: 1.6; }
-      .countdown-wrap { padding: 15px 10px 18px; }
-      .unit { padding: 13px 3px 10px; }
-      .unit-name { letter-spacing: .1em; font-size: 8px; }
-      .launch-info { gap: 9px 14px; font-size: 9px; letter-spacing: .09em; }
-      footer { flex-direction: column; text-align: center; padding-bottom: 16px; }
-      .sunset { width: 92vw; top: 24%; }
-    }
-    /* Responsive layout and stable native scrolling on phones */
-    @media (max-width: 560px) {
-      .scene { min-height: 100vh; min-height: 100svh; }
-      .topbar, main, footer { width: calc(100% - 28px); max-width: 1120px; }
-      .topbar { padding: 16px 0 8px; gap: 8px; }
-      .brand { gap: 8px; font-size: 8px; line-height: 1.25; letter-spacing: .1em; }
-      .brand-mark { width: 27px; height: 27px; flex: 0 0 27px; }
-      .brand-mark span { font-size: 11px; }
-      .live { flex: 0 0 auto; gap: 6px; font-size: 7px; letter-spacing: .1em; padding: 7px 8px; }
-      main { padding: clamp(22px, 5vh, 42px) 0 30px; }
-      .eyebrow { letter-spacing: .18em; font-size: 8px; margin-bottom: 15px; }
-      h1 { font-size: clamp(40px, 11.5vw, 64px); line-height: .92; letter-spacing: -.07em; }
-      .subtitle { max-width: 310px; font-size: 13px; line-height: 1.55; margin: 15px 0 22px; }
-      .countdown-wrap { width: 100%; max-width: 430px; padding: 16px 9px 15px; }
-      .countdown-label { font-size: 9px; letter-spacing: .2em; margin-bottom: 14px; }
-      .timer { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
-      .unit { min-width: 0; padding: 12px 2px 10px; }
-      .number { font-size: clamp(24px, 8vw, 36px); letter-spacing: -.06em; }
-      .unit-name { margin-top: 8px; font-size: 7px; letter-spacing: .07em; }
-      .out-now { font-size: clamp(22px, 6vw, 30px); padding: 18px 5px; line-height: 1.8; }
-      .launch-info { gap: 8px 11px; margin-top: 16px; font-size: 8px; letter-spacing: .06em; }
-      .local-clock { gap: 7px; margin-top: 17px; font-size: 9px; letter-spacing: .04em; }
-      .timezone { font-size: 8px; }
-      footer { flex-direction: column; text-align: center; gap: 8px; padding: 0 0 14px; font-size: 8px; }
-      .sunset { width: 92vw; top: 23%; }
-      .horizon { min-height: 180px; }
-    }
-    @media (max-width: 360px) {
-      .topbar, main, footer { width: calc(100% - 22px); }
-      .brand { font-size: 7px; letter-spacing: .07em; }
-      .brand-mark { width: 24px; height: 24px; flex-basis: 24px; }
-      .live { font-size: 6px; padding: 6px 7px; }
-      h1 { font-size: clamp(37px, 11vw, 46px); }
-      .timer { gap: 4px; }
-      .unit { padding-inline: 1px; }
-      .number { font-size: 24px; }
-      .unit-name { font-size: 6px; letter-spacing: .04em; }
-      .launch-info { gap: 7px; font-size: 7px; }
-      .local-clock { font-size: 8px; }
-      .out-now { font-size: 21px; }
-    }
-    @media (max-height: 700px) and (max-width: 560px) {
-      main { padding-top: 16px; padding-bottom: 20px; }
-      .eyebrow { margin-bottom: 10px; }
-      .subtitle { margin-top: 10px; margin-bottom: 16px; }
-      .countdown-wrap { padding-top: 13px; padding-bottom: 12px; }
-      .local-clock { margin-top: 12px; }
-    }
-    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; } }
-  </style>
+  <meta name="twitter:title" content="GTA VI — Release Day">
+  <meta name="twitter:description" content="A visual journey through Leonida.">
+  <meta name="twitter:image" content="https://www.rockstargames.com/VI/_next/static/media/Leonida_Keys_01.0zgz7tveur6y8.jpg">
+  <title>GTA VI — Release Day</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <div class="scene" id="scene">
-    <div class="sunset" aria-hidden="true"></div>
-    <div class="horizon" aria-hidden="true"></div>
-    <div class="grid-floor" aria-hidden="true"></div>
-
+  <div class="site-shell">
     <header class="topbar">
-      <div class="brand"><span class="brand-mark"><span>VI</span></span><span>LEONIDA STATE<br>COUNTDOWN SYSTEM</span></div>
-      <div class="live"><span class="live-dot"></span><span>LIVE COUNTDOWN</span></div>
+      <a class="brand" href="#top" aria-label="GTA VI Release Day home">
+        <span class="brand-mark">VI</span>
+        <span class="brand-copy">GTA VI <small>RELEASE DAY</small></span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#world">The World</a>
+        <a href="#places">Places</a>
+        <a href="#gallery">Gallery</a>
+        <a href="https://www.rockstargames.com/VI" target="_blank" rel="noopener noreferrer">Rockstar</a>
+      </nav>
     </header>
 
-    <main>
-      <div class="eyebrow">Vice City is calling · 2026</div>
-      <h1><span>Grand Theft</span><span class="line2">Auto <b class="vi">VI</b></span></h1>
-      <p class="subtitle">The next chapter is almost here. Every second brings it closer.</p>
-
-      <section class="countdown-wrap" aria-label="Countdown to GTA VI release">
-        <div class="countdown-label">Time until launch</div>
-        <div class="timer" id="timer" aria-live="off">
-          <div class="unit"><span class="number" id="days">--</span><span class="unit-name">DAYS</span></div>
-          <div class="unit"><span class="number" id="hours">--</span><span class="unit-name">HOURS</span></div>
-          <div class="unit"><span class="number" id="minutes">--</span><span class="unit-name">MINUTES</span></div>
-          <div class="unit"><span class="number" id="seconds">--</span><span class="unit-name">SECONDS</span></div>
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <img class="hero-media" src="https://www.rockstargames.com/VI/_next/static/media/Leonida_Keys_01.0zgz7tveur6y8.jpg" alt="Aerial view of the Leonida Keys, turquoise water and a small aircraft" fetchpriority="high">
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-content">
+          <div class="kicker">Rockstar Games · Leonida, USA</div>
+          <h1 id="hero-title">Welcome to <span>Leonida.</span></h1>
+          <p class="hero-lead">A world of sunlit coastlines, neon nights and wide-open horizons. Take a closer look at the places that make up the world of Grand Theft Auto VI.</p>
+          <div class="hero-actions">
+            <a class="button" href="#world">Explore the world</a>
+            <a class="button secondary" href="#gallery">View screenshots</a>
+          </div>
+          <div class="release-note" lang="fa" dir="rtl"><b>ریلیز شده داداش،</b> سیکتو بزن برو بازی کن 😂</div>
         </div>
-        <div class="out-now" role="status" lang="fa" dir="rtl">ریلیز شده داداش، سیکتو بزن برو بازی کن</div>
-        <div class="launch-info">
-          <span><strong>THU</strong> · NOV 19, 2026</span><span class="divider"></span><span><strong>00:00</strong> · LOCAL TIME</span>
+        <div class="scroll-cue" aria-hidden="true">Scroll to explore</div>
+      </section>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>Grand Theft Auto VI <i>✦</i> Vice City <i>✦</i> Leonida <i>✦</i> The Keys <i>✦</i> Grassrivers <i>✦</i> Port Gellhorn <i>✦</i></span>
+          <span>Grand Theft Auto VI <i>✦</i> Vice City <i>✦</i> Leonida <i>✦</i> The Keys <i>✦</i> Grassrivers <i>✦</i> Port Gellhorn <i>✦</i></span>
+        </div>
+      </div>
+
+      <section class="section" id="world">
+        <div class="section-heading" data-reveal>
+          <div>
+            <div class="kicker">One state. Countless stories.</div>
+            <h2>A world of<br>contrasts.</h2>
+          </div>
+          <p>From bright coastal horizons to quiet corners after dark, explore a few of the landscapes featured in the official Rockstar Games screenshot collection.</p>
+        </div>
+        <div class="world-grid">
+          <article class="world-card tall" data-reveal>
+            <img src="https://www.rockstargames.com/VI/_next/static/media/Grassrivers_02.0teqs5xe2pem1.jpg" alt="Waterfront buildings and boats in Grassrivers" loading="lazy" decoding="async">
+            <div class="world-card-copy">
+              <small>01 · The waterways</small>
+              <h3>Grassrivers</h3>
+              <p>Waterfront life, open skies and a different pace beyond the city.</p>
+            </div>
+          </article>
+          <article class="world-card" data-reveal>
+            <img src="https://www.rockstargames.com/VI/_next/static/media/Port_Gellhorn_01.0fmisvza-5-cq.jpg" alt="A neon-lit roadside motel in Port Gellhorn at night" loading="lazy" decoding="async">
+            <div class="world-card-copy">
+              <small>02 · After dark</small>
+              <h3>Port Gellhorn</h3>
+              <p>Roadside lights and late-night atmosphere.</p>
+            </div>
+          </article>
         </div>
       </section>
 
-      <div class="local-clock"><span>YOUR LOCAL TIME</span><strong id="local-date">Loading date…</strong><strong id="local-time">--:--:--</strong><span class="timezone" id="timezone">Detecting timezone…</span></div>
+      <section class="feature" id="places" data-reveal>
+        <img src="https://www.rockstargames.com/VI/_next/static/media/Leonida_Keys_01.0zgz7tveur6y8.jpg" alt="The Leonida Keys stretching across blue coastal water" loading="lazy" decoding="async">
+        <div class="feature-copy">
+          <div class="kicker">Beyond the skyline</div>
+          <h2>Find your<br>own horizon.</h2>
+          <p>Clear water, long bridges and islands scattered across the coast. The Leonida Keys bring a wide-open feel to this corner of the map.</p>
+          <a class="button secondary" href="https://www.rockstargames.com/VI/launch-gallery" target="_blank" rel="noopener noreferrer">Official launch gallery</a>
+        </div>
+      </section>
+
+      <section class="section" id="gallery">
+        <div class="section-heading" data-reveal>
+          <div>
+            <div class="kicker">A closer look</div>
+            <h2>Scenes from<br>Leonida.</h2>
+          </div>
+          <p>Swipe or scroll through official location screenshots. The gallery uses native horizontal scrolling, so it works with touch, mouse and trackpad.</p>
+        </div>
+        <div class="gallery" data-gallery aria-label="Official GTA VI location screenshots">
+          <figure>
+            <img src="https://www.rockstargames.com/VI/_next/static/media/Leonida_Keys_01.0zgz7tveur6y8.jpg" alt="Aerial landscape of the Leonida Keys" loading="lazy" decoding="async">
+            <figcaption><span>Leonida Keys</span><span>01 / 03</span></figcaption>
+          </figure>
+          <figure>
+            <img src="https://www.rockstargames.com/VI/_next/static/media/Grassrivers_02.0teqs5xe2pem1.jpg" alt="Grassrivers waterfront landscape" loading="lazy" decoding="async">
+            <figcaption><span>Grassrivers</span><span>02 / 03</span></figcaption>
+          </figure>
+          <figure>
+            <img src="https://www.rockstargames.com/VI/_next/static/media/Port_Gellhorn_01.0fmisvza-5-cq.jpg" alt="Port Gellhorn motel at night" loading="lazy" decoding="async">
+            <figcaption><span>Port Gellhorn</span><span>03 / 03</span></figcaption>
+          </figure>
+        </div>
+        <div class="gallery-hint" data-gallery-status aria-live="polite">Scroll to explore</div>
+      </section>
+
+      <section class="section" aria-label="Official game website">
+        <div class="end-card" data-reveal>
+          <div>
+            <div class="kicker">Keep exploring</div>
+            <h2>The world is<br>waiting.</h2>
+            <p>This is an unofficial fan-made visual page. Visit Rockstar Games for official news, media, screenshots and game information.</p>
+          </div>
+          <a class="button" href="https://www.rockstargames.com/VI" target="_blank" rel="noopener noreferrer">Visit Rockstar Games</a>
+        </div>
+      </section>
     </main>
 
-    <footer>
-      <span>Fan-made countdown · Not affiliated with Rockstar Games</span>
-      <a href="https://www.rockstargames.com/VI" target="_blank" rel="noopener noreferrer">Official GTA VI site ↗</a>
+    <footer class="footer">
+      <span>Unofficial fan-made page · Not affiliated with Rockstar Games</span>
+      <span>Selected screenshots © Rockstar Games</span>
+      <a href="https://www.rockstargames.com/VI/media/screenshots" target="_blank" rel="noopener noreferrer">Official image gallery ↗</a>
     </footer>
   </div>
-
-  <script>
-    (() => {
-      // Rockstar's regional release guidance: midnight local time on 19 November 2026.
-      // The browser's local timezone is used so the countdown adjusts for each visitor.
-      const target = new Date(2026, 10, 19, 0, 0, 0, 0);
-      const scene = document.getElementById('scene');
-      const parts = {
-        days: document.getElementById('days'),
-        hours: document.getElementById('hours'),
-        minutes: document.getElementById('minutes'),
-        seconds: document.getElementById('seconds')
-      };
-      const localTime = document.getElementById('local-time');
-      const localDate = document.getElementById('local-date');
-      const timezone = document.getElementById('timezone');
-      const pad = value => String(value).padStart(2, '0');
-      const zone = Intl.DateTimeFormat().resolvedOptions().timeZone || 'Local timezone';
-      timezone.textContent = zone;
-
-      function tick() {
-        const now = new Date();
-        localDate.textContent = new Intl.DateTimeFormat(undefined, {
-          weekday: 'short', day: '2-digit', month: 'short', year: 'numeric'
-        }).format(now);
-        localTime.textContent = new Intl.DateTimeFormat(undefined, {
-          hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
-        }).format(now);
-
-        const remaining = target.getTime() - now.getTime();
-        if (remaining <= 0) {
-          Object.values(parts).forEach(node => node.textContent = '00');
-          scene.classList.add('is-out');
-          return;
-        }
-        const totalSeconds = Math.floor(remaining / 1000);
-        const days = Math.floor(totalSeconds / 86400);
-        const hours = Math.floor((totalSeconds % 86400) / 3600);
-        const minutes = Math.floor((totalSeconds % 3600) / 60);
-        const seconds = totalSeconds % 60;
-        parts.days.textContent = String(days).padStart(2, '0');
-        parts.hours.textContent = pad(hours);
-        parts.minutes.textContent = pad(minutes);
-        parts.seconds.textContent = pad(seconds);
-        scene.classList.remove('is-out');
-      }
-
-      tick();
-      window.setInterval(tick, 1000);
-    })();
-  </script>
 </body>
 </html>
